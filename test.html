@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #left{
+                margin-top:14.7%;
+                margin-left:0%;
+                position:absolute;
+            }
+            #right{
+                right:37.2%;
+                margin-top:14.7%;
+                position:absolute;
+            }
+            #down{
+                position:absolute;
+                height:11%;
+                bottom:33.7%;
+                left:43.7%;
+                height:60px;
+            }
+            #up{
+                top:32.3%;
+                position:absolute;
+                left:43.7%;
+            }
+            #ldoro{
+                float:left;
+                margin-top:15.3%;
+                margin-left:22.5%;
+            }
+            #rdoro{
+                float:right;
+                margin-top:15.3%;
+                margin-right:20%;
+            }
+            #udoro{
+                margin-top:1%;
+                margin-left:5%;
+            }
+            #ddoro{
+                margin-top:16.3%;
+                margin-right:5%;
+                float:right;
+            }
+            #dpeople{
+                position:absolute;
+                bottom:0%;
+                left:35%;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="left" width="4%" src="img/left_red.png">
+        <img id="right" width="4%" src="img/right_red.png">
+        <img id="down" width="15%" src="img/up_leftred.png">
+        <img id="up" width="15%" height="60px" src="img/down_leftred.png">
+        <img id="ldoro" width="17%" src="img/ldoro_red.png">
+        <img id="rdoro" width="17%" src="img/rdoro_red.png">
+        <img id="udoro" width="12%" src="img/udoro_red.png">
+        <img id="ddoro" width="12%" src="img/ddoro_red.png">
+        <img style="position:absolute; right:550px;" id="upeople" width="7%" src="img/peopleleft.png">
+        <img style="position:absolute; bottom:5%; left:580px;" id="dpeople" width="7%" src="img/peopleright.png">
+        <img style="position:absolute; right:350px; bottom:150px" id="rpeople" width="12%" src="img/peopleup.png">
+        <img style="position:absolute; left:400px; top:130px;" id="lpeople" width="12%" src="img/peopledown.png">
+        <img style="position:absolute; left:0px; top: 300px; " id="car" width="150px" src='img/car.png'>
+        <img style="position:absolute; right:0px; top:400px;" id="rcar" width="10%" src="img/redcar.png">
+        <img style="position:absolute; left:47%; top:0px;" width="5%" id="ucar" src="img/ucar.png">
+        <img style="position:absolute; left:53%; bottom:0px;" width="5%" id="dcar" src="img/dcar.png">
+        <script>
+            start();
+            var lc = false;
+            var rc = false;
+            var uc = false;
+            var dc = false;
+            function up_car(){
+                var ucar = document.getElementById('ucar');
+                var uan;
+                umove();
+                function umove() {
+                    ucar.style.top = parseInt(ucar.style.top) + 10 +'px';
+                    if(uc == true && (parseInt(ucar.style.top) == 10)){
+                        
+                    }else{
+                        uan = setTimeout(umove, 30);
+                        if (parseInt(ucar.style.top) >= 600){
+                            ucar.style.top = 0;
+                        }   
+                    }
+                }
+            }
+            function down_car(){
+                var dcar = document.getElementById('dcar');
+                var dan;
+                dmove();
+                function dmove() {
+                    dcar.style.bottom = parseInt(dcar.style.bottom) + 10 +'px';
+                    if(dc == true && (parseInt(dcar.style.bottom) == 10)){
+                        
+                    }else{
+                        dan = setTimeout(dmove, 30);
+                        if (parseInt(dcar.style.bottom) >= 600){
+                            dcar.style.bottom = 0;
+                        }   
+                    }
+                }
+            }
+            function left_car(){
+                var lcar = document.getElementById('car');
+                var lan;
+                lmove();
+                function lmove() {
+                    lcar.style.left = parseInt(lcar.style.left) + 10 +'px';
+                    if(lc == true && (parseInt(lcar.style.left) == 180)){
+                        
+                    }else{
+                        lan = setTimeout(lmove, 20);
+                        if (parseInt(lcar.style.left) >= 1390){
+                            lcar.style.left = 0;
+                        }   
+                    }
+                }
+            }
+            function right_car(){
+                var rcar = document.getElementById('rcar');
+                var ran;
+                rmove();
+                function rmove(){
+                    rcar.style.right = parseInt(rcar.style.right) + 10 +'px';
+                    if(rc == true && (parseInt(rcar.style.right) == 130)){
+                        
+                    }else{
+                        ran = setTimeout(rmove, 20);
+                        if (parseInt(rcar.style.right) >= 1390){
+                            rcar.style.right = 0;
+                        }   
+                    }
+                }
+            }
+            function lperson(){
+                var lper = document.getElementById('lpeople');
+                var lpa;
+                lpmove();
+                function lpmove(){
+                    lper.style.top = parseInt(lper.style.top) + 10 + 'px';
+                    if(parseInt(lper.style.top)>=470){
+                        lper.style.top = '130px'
+                    }else{
+                        lpa = setTimeout(lpmove,40);
+                    }
+                }
+            }
+            function rperson(){
+                var rper = document.getElementById('rpeople');
+                var rpa;
+                rpmove();
+                function rpmove(){
+                    rper.style.bottom = parseInt(rper.style.bottom)+10+'px';
+                    if(parseInt(rper.style.bottom)>=480){
+                        rper.style.bottom = '150px'
+                    }else{
+                        rpa = setTimeout(rpmove,40);
+                    }
+                }
+            }
+            function uperson(){
+                var uper = document.getElementById('upeople');
+                var upa;
+                upmove();
+                function upmove(){
+                    uper.style.right = parseInt(uper.style.right)+10+'px';
+                    if(parseInt(uper.style.right)>=870){
+                        uper.style.right = '550px'
+                    }else{
+                        upa = setTimeout(upmove,40);
+                    }
+                }
+            }
+            function dperson(){
+                var dper = document.getElementById('dpeople');
+                var dpa;
+                dpmove();
+                function dpmove(){
+                    dper.style.left = parseInt(dper.style.left)+10+'px';
+                    if(parseInt(dper.style.left)>=870){
+                        dper.style.left = '570px'
+                    }else{
+                        dpa = setTimeout(dpmove,40);
+                    }
+                }
+            }
+            function delay(sec){
+                return new Promise((resolve, rejct)=>{
+                    setTimeout(()=>{
+                        resolve(new Date().toISOString());
+                    }, sec * 1000);
+                })
+            }
+            function start(){
+                delay(3).then((result)=>{
+                var ugimg=document.getElementById('up');
+                ugimg.src = "img/up_green.png";
+                uc = false;
+                up_car();
+                return delay(0);
+            }).then((result)=>{
+                var dgimg=document.getElementById('down');
+                dgimg.src="img/down_green.png";
+                dc = false;
+                down_car();
+                return delay(0)
+            }).then((result)=>{
+                var lgdimg=document.getElementById('ldoro');
+                lgdimg.src="img/ldoro_green.png";
+                lperson();
+                return delay(0);
+            }).then((result)=>{
+                var rgdimg=document.getElementById('rdoro');
+                rgdimg.src="img/rdoro_green.png";
+                rperson();
+                return delay(3)
+            }).then((result)=>{
+                var lrdimg=document.getElementById('ldoro');
+                lrdimg.src="img/ldoro_red.png";
+                return delay(0)
+            }).then((result)=>{
+                var rrdimg=document.getElementById('rdoro');
+                rrdimg.src="img/rdoro_red.png";
+                return delay(5)
+            }).then((result)=>{
+                var uyimg=document.getElementById('up');
+                uyimg.src="img/up_yellow.png";
+                uc = true;
+                return delay(0)
+            }).then((result)=>{
+                var dyimg=document.getElementById('down');
+                dyimg.src="img/down_yellow.png";
+                dc = true;
+                return delay(1)
+            }).then((result)=>{
+                var urimg=document.getElementById('up');
+                urimg.src="img/up_red.png";
+                return delay(0)
+            }).then((result)=>{
+                var drimg=document.getElementById('down');
+                drimg.src="img/down_red.png";
+                return delay(0)
+            }).then((result)=>{
+                var llgimg=document.getElementById('left');
+                llgimg.src="img/left_leftred.png";
+                return delay(0)
+            }).then((result)=>{
+                var rlgimg=document.getElementById('right');
+                rlgimg.src="img/right_leftred.png";
+                return delay(3)
+            }).then((result)=>{
+                var lgimg=document.getElementById('left');
+                lgimg.src="img/left_green.png";
+                lc = false;
+                left_car();
+                return delay(0)
+            }).then((result)=>{
+                var rgimg=document.getElementById('right');
+                rgimg.src="img/right_green.png"
+                rc = false;
+                right_car();
+                return delay(1)
+            }).then((result)=>{
+                var ugdimg=document.getElementById('udoro');
+                ugdimg.src="img/udoro_green.png";
+                uperson();
+                return delay(0);
+            }).then((result)=>{
+                var dgdimg=document.getElementById('ddoro');
+                dgdimg.src="img/ddoro_green.png";
+                dperson();
+                return delay(3)
+            }).then((result)=>{
+                var urdimg=document.getElementById('udoro');
+                urdimg.src="img/udoro_red.png";
+                return delay(0);
+            }).then((result)=>{
+                var drdimg=document.getElementById('ddoro');
+                drdimg.src="img/ddoro_red.png";
+                return delay(5)
+            }).then((result)=>{
+                var lyimg=document.getElementById('left');
+                lyimg.src="img/left_yellow.png";
+                return delay(0)
+            }).then(()=>{
+                var ryimg=document.getElementById('right');
+                ryimg.src="img/right_yellow.png"
+                return delay(1)
+            }).then(()=>{
+                var lrimg=document.getElementById('left');
+                lrimg.src="img/left_red.png";
+                lc = true;
+                return delay(0)
+            }).then(()=>{
+                var rrimg=document.getElementById('right');
+                rrimg.src="img/right_red.png"
+                rc = true;
+                return delay(1)
+            }).then((result)=>{
+                var ulrimg=document.getElementById('up');
+                ulrimg.src="img/up_leftred.png"
+                return delay(0)
+            }).then((result)=>{
+                var dlrimg=document.getElementById('down');
+                dlrimg.src="img/down_leftred.png"
+                start();
+            })
+            }
+            
+        </script>
+    </body>
+</html>
